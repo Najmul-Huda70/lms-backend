@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.2.0",
+    "jose-cjs": "^6.2.3",
+    "mysql2": "^3.22.5"
+  },
+  "name": "lms-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Najmul-Huda70/lms-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Najmul-Huda70/lms-backend/issues"
+  },
+  "homepage": "https://github.com/Najmul-Huda70/lms-backend#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
