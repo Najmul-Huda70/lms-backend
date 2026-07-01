@@ -1,28 +1,24 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import mysql from "mysql2/promise";
-import { createRemoteJWKSet, jwtVerify } from "jose-cjs";
-import helmet from "helmet";
-import rateLimit from "express-rate-limit";
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const mysql = require("mysql2/promise");
+const { createRemoteJWKSet, jwtVerify } = require("jose-cjs");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 
 dotenv.config();
+
 const app = express();
 
-// 💡 ফিক্স ১: পোর্ট ব্যাকআপ রাখা (যদি .env থেকে PORT না পায়, তবে ডিফল্ট 3002 নিবে)
-const PORT = process.env.PORT || 3002;
-
-let db = null;
-
+app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-  })
-);
+
+
+const PORT = process.env.PORT || 3002;
+
+let db = null;
 
 async function connectDB() {
   try {
